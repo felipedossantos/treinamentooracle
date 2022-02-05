@@ -1,0 +1,346 @@
+create profile ORA_ADMIN_PROFILE limit 
+         SESSIONS_PER_USER     3
+         FAILED_LOGIN_ATTEMPTS 3
+         PASSWORD_LIFE_TIME    90
+         PASSWORD_REUSE_TIME   365
+         PASSWORD_REUSE_MAX    5;
+
+create user aluno1 identified by aluno1# profile ORA_ADMIN_PROFILE;
+
+grant CREATE ANALYTIC VIEW to aluno1;
+grant ALTER ANY CUBE BUILD PROCESS to aluno1;
+grant CREATE LOCKDOWN PROFILE to aluno1;
+grant EXEMPT REDACTION POLICY to aluno1;
+grant DROP ANY SQL TRANSLATION PROFILE to aluno1;
+grant UPDATE ANY CUBE DIMENSION to aluno1;
+grant DELETE ANY CUBE DIMENSION to aluno1;
+grant SELECT ANY MINING MODEL to aluno1;
+grant ALTER ANY ASSEMBLY to aluno1;
+grant EXECUTE ANY RULE to aluno1;
+grant GRANT ANY OBJECT PRIVILEGE to aluno1;
+grant DEBUG CONNECT ANY to aluno1;
+grant CREATE ANY CONTEXT to aluno1;
+grant CREATE DIMENSION to aluno1;
+grant UNDER ANY TABLE to aluno1;
+grant GLOBAL QUERY REWRITE to aluno1;
+grant QUERY REWRITE to aluno1;
+grant DROP ANY INDEXTYPE to aluno1;
+grant ALTER ANY OPERATOR to aluno1;
+grant ALTER ANY LIBRARY to aluno1;
+grant DROP ANY TYPE to aluno1;
+grant DROP ANY DIRECTORY to aluno1;
+grant DROP ANY TRIGGER to aluno1;
+grant AUDIT ANY to aluno1;
+grant DROP PUBLIC SYNONYM to aluno1;
+grant DROP ANY SYNONYM to aluno1;
+grant CREATE ANY TABLE to aluno1;
+grant CREATE TABLE to aluno1;
+grant ALTER USER to aluno1;
+grant CREATE TABLESPACE to aluno1;
+grant ALTER SYSTEM to aluno1;
+grant CREATE HIERARCHY to aluno1;
+grant ALTER ANY ATTRIBUTE DIMENSION to aluno1;
+grant ALTER ANY SQL TRANSLATION PROFILE to aluno1;
+grant CREATE CUBE BUILD PROCESS to aluno1;
+grant CREATE MEASURE FOLDER to aluno1;
+grant DROP ANY CUBE to aluno1;
+grant CREATE ANY MINING MODEL to aluno1;
+grant DROP ANY ASSEMBLY to aluno1;
+grant SELECT ANY TRANSACTION to aluno1;
+grant CREATE JOB to aluno1;
+grant DEBUG ANY PROCEDURE to aluno1;
+grant DROP ANY CONTEXT to aluno1;
+grant DROP ANY DIMENSION to aluno1;
+grant DROP ANY LIBRARY to aluno1;
+grant CREATE ANY MATERIALIZED VIEW to aluno1;
+grant ALTER PROFILE to aluno1;
+grant CREATE PROFILE to aluno1;
+grant CREATE PUBLIC DATABASE LINK to aluno1;
+grant CREATE DATABASE LINK to aluno1;
+grant ALTER ANY SEQUENCE to aluno1;
+grant DROP ANY VIEW to aluno1;
+grant DROP ANY INDEX to aluno1;
+grant DELETE ANY TABLE to aluno1;
+grant LOCK ANY TABLE to aluno1;
+grant ALTER ROLLBACK SEGMENT to aluno1;
+grant CREATE USER to aluno1;
+grant ALTER SESSION to aluno1;
+grant DROP ANY ANALYTIC VIEW to aluno1;
+grant CREATE ANY ANALYTIC VIEW to aluno1;
+grant DROP ANY HIERARCHY to aluno1;
+grant CREATE ATTRIBUTE DIMENSION to aluno1;
+grant ALTER ANY MEASURE FOLDER to aluno1;
+grant INSERT ANY MEASURE FOLDER to aluno1;
+grant DROP ANY MEASURE FOLDER to aluno1;
+grant CREATE ANY CUBE to aluno1;
+grant DROP ANY EDITION to aluno1;
+grant MANAGE SCHEDULER to aluno1;
+grant CREATE ANY RULE SET to aluno1;
+grant DROP ANY EVALUATION CONTEXT to aluno1;
+grant CREATE ANY EVALUATION CONTEXT to aluno1;
+grant CREATE EVALUATION CONTEXT to aluno1;
+grant CREATE TYPE to aluno1;
+grant CREATE ANY DIRECTORY to aluno1;
+grant ALTER RESOURCE COST to aluno1;
+grant DROP PROFILE to aluno1;
+grant CREATE ANY PROCEDURE to aluno1;
+grant DROP ANY ROLE to aluno1;
+grant SELECT ANY SEQUENCE to aluno1;
+grant CREATE ANY SYNONYM to aluno1;
+grant UPDATE ANY TABLE to aluno1;
+grant BECOME USER to aluno1;
+grant DROP ANY ATTRIBUTE DIMENSION to aluno1;
+grant SELECT ANY CUBE BUILD PROCESS to aluno1;
+grant CREATE PLUGGABLE DATABASE to aluno1;
+grant SELECT ANY CUBE DIMENSION to aluno1;
+grant DROP ANY MINING MODEL to aluno1;
+grant READ ANY FILE GROUP to aluno1;
+grant CREATE ANY SQL PROFILE to aluno1;
+grant ADMINISTER SQL TUNING SET to aluno1;
+grant DROP ANY SQL PROFILE to aluno1;
+grant ADVISOR to aluno1;
+grant CREATE RULE to aluno1;
+grant EXEMPT ACCESS POLICY to aluno1;
+grant ALTER ANY DIMENSION to aluno1;
+grant ALTER ANY INDEXTYPE to aluno1;
+grant CREATE OPERATOR to aluno1;
+grant EXECUTE ANY LIBRARY to aluno1;
+grant ALTER ANY TYPE to aluno1;
+grant ALTER ANY MATERIALIZED VIEW to aluno1;
+grant EXECUTE ANY PROCEDURE to aluno1;
+grant CREATE VIEW to aluno1;
+grant CREATE PUBLIC SYNONYM to aluno1;
+grant INSERT ANY TABLE to aluno1;
+grant RESTRICTED SESSION to aluno1;
+grant CREATE ANY HIERARCHY to aluno1;
+grant CREATE ANY ATTRIBUTE DIMENSION to aluno1;
+grant TRANSLATE ANY SQL to aluno1;
+grant INSERT ANY CUBE DIMENSION to aluno1;
+grant COMMENT ANY MINING MODEL to aluno1;
+grant CREATE ANY ASSEMBLY to aluno1;
+grant ALTER ANY EDITION to aluno1;
+grant DROP ANY RULE SET to aluno1;
+grant ALTER ANY EVALUATION CONTEXT to aluno1;
+grant FLASHBACK ANY TABLE to aluno1;
+grant SELECT ANY DICTIONARY to aluno1;
+grant ADMINISTER RESOURCE MANAGER to aluno1;
+grant CREATE INDEXTYPE to aluno1;
+grant DROP ANY OPERATOR to aluno1;
+grant ALTER DATABASE to aluno1;
+grant CREATE ROLE to aluno1;
+grant CREATE ANY SEQUENCE to aluno1;
+grant ALTER ANY INDEX to aluno1;
+grant CREATE CLUSTER to aluno1;
+grant SELECT ANY TABLE to aluno1;
+grant COMMENT ANY TABLE to aluno1;
+grant ALTER ANY TABLE to aluno1;
+grant DROP USER to aluno1;
+grant ALTER TABLESPACE to aluno1;
+grant AUDIT SYSTEM to aluno1;
+grant READ ANY TABLE to aluno1;
+grant CREATE SQL TRANSLATION PROFILE to aluno1;
+grant ADMINISTER SQL MANAGEMENT OBJECT to aluno1;
+grant UPDATE ANY CUBE BUILD PROCESS to aluno1;
+grant CREATE CUBE to aluno1;
+grant EXECUTE ASSEMBLY to aluno1;
+grant ALTER ANY SQL PROFILE to aluno1;
+grant ALTER ANY RULE to aluno1;
+grant RESUMABLE to aluno1;
+grant ADMINISTER DATABASE TRIGGER to aluno1;
+grant CREATE ANY OUTLINE to aluno1;
+grant CREATE ANY DIMENSION to aluno1;
+grant EXECUTE ANY OPERATOR to aluno1;
+grant CREATE ANY OPERATOR to aluno1;
+grant ALTER ANY TRIGGER to aluno1;
+grant ALTER ANY PROCEDURE to aluno1;
+grant CREATE PROCEDURE to aluno1;
+grant ALTER ANY ROLE to aluno1;
+grant DROP ANY SEQUENCE to aluno1;
+grant CREATE ANY VIEW to aluno1;
+grant ALTER ANY CLUSTER to aluno1;
+grant UNLIMITED TABLESPACE to aluno1;
+grant CREATE SESSION to aluno1;
+grant ALTER ANY ANALYTIC VIEW to aluno1;
+grant SELECT ANY MEASURE FOLDER to aluno1;
+grant ALTER LOCKDOWN PROFILE to aluno1;
+grant CREATE ANY SQL TRANSLATION PROFILE to aluno1;
+grant DROP ANY CUBE BUILD PROCESS to aluno1;
+grant CREATE ANY MEASURE FOLDER to aluno1;
+grant UPDATE ANY CUBE to aluno1;
+grant SELECT ANY CUBE to aluno1;
+grant ALTER ANY CUBE to aluno1;
+grant ALTER ANY CUBE DIMENSION to aluno1;
+grant ALTER ANY MINING MODEL to aluno1;
+grant EXECUTE ANY ASSEMBLY to aluno1;
+grant CREATE ANY EDITION to aluno1;
+grant CREATE ANY JOB to aluno1;
+grant DROP ANY RULE to aluno1;
+grant EXECUTE ANY RULE SET to aluno1;
+grant CREATE RULE SET to aluno1;
+grant ON COMMIT REFRESH to aluno1;
+grant MERGE ANY VIEW to aluno1;
+grant ALTER ANY OUTLINE to aluno1;
+grant EXECUTE ANY INDEXTYPE to aluno1;
+grant UNDER ANY TYPE to aluno1;
+grant DROP ANY MATERIALIZED VIEW to aluno1;
+grant CREATE MATERIALIZED VIEW to aluno1;
+grant ANALYZE ANY to aluno1;
+grant CREATE ANY TRIGGER to aluno1;
+grant FORCE ANY TRANSACTION to aluno1;
+grant GRANT ANY ROLE to aluno1;
+grant DROP PUBLIC DATABASE LINK to aluno1;
+grant CREATE SEQUENCE to aluno1;
+grant CREATE ANY INDEX to aluno1;
+grant CREATE ANY CLUSTER to aluno1;
+grant CREATE ROLLBACK SEGMENT to aluno1;
+grant DROP TABLESPACE to aluno1;
+grant ALTER ANY HIERARCHY to aluno1;
+grant DROP LOCKDOWN PROFILE to aluno1;
+grant PURGE DBA_RECYCLEBIN to aluno1;
+grant CREATE ANY CUBE BUILD PROCESS to aluno1;
+grant DELETE ANY MEASURE FOLDER to aluno1;
+grant DROP ANY CUBE DIMENSION to aluno1;
+grant CREATE ANY CUBE DIMENSION to aluno1;
+grant CREATE CUBE DIMENSION to aluno1;
+grant CREATE MINING MODEL to aluno1;
+grant CREATE ASSEMBLY to aluno1;
+grant CHANGE NOTIFICATION to aluno1;
+grant ADMINISTER ANY SQL TUNING SET to aluno1;
+grant ANALYZE ANY DICTIONARY to aluno1;
+grant CREATE ANY RULE to aluno1;
+grant ALTER ANY RULE SET to aluno1;
+grant EXECUTE ANY EVALUATION CONTEXT to aluno1;
+grant DEBUG CONNECT SESSION to aluno1;
+grant DROP ANY OUTLINE to aluno1;
+grant UNDER ANY VIEW to aluno1;
+grant CREATE ANY INDEXTYPE to aluno1;
+grant EXECUTE ANY TYPE to aluno1;
+grant CREATE ANY TYPE to aluno1;
+grant CREATE TRIGGER to aluno1;
+grant DROP ANY PROCEDURE to aluno1;
+grant CREATE SYNONYM to aluno1;
+grant DROP ANY CLUSTER to aluno1;
+grant REDEFINE ANY TABLE to aluno1;
+grant DROP ANY TABLE to aluno1;
+grant DROP ROLLBACK SEGMENT to aluno1;
+grant MANAGE TABLESPACE to aluno1;
+
+create table conta ( idcliente number,
+                     encerrada char(3),
+                     conta     varchar(6),
+                     agencia   char(4),
+                     idconjuge number,
+                     saldo     number(38,2));
+
+insert into conta values (1,'NAO','1111','0001',null,1000);
+insert into conta values (2,'SIM','2222','0001',5   ,2000);
+insert into conta values (3,'NAO','3333','0001',null,3000);
+insert into conta values (4,'NAO','4444','0001',null,4000);
+
+
+create table cartao ( idcliente        int,
+                      bandeira         varchar(10),
+                      datacancelamento date,
+                      numerocartao     varchar(19),
+                      cvv              char(3)     );
+
+insert into cartao values (1,'MASTER',sysdate-10 ,'8236-56XX-XXXX-1234','XXX');
+insert into cartao values (2,'VISA'  ,sysdate-40 ,'9327-78XX-XXXX-4321','XXX');
+insert into cartao values (3,'MASTER',null       ,'8846-90XX-XXXX-9876','XXX');
+insert into cartao values (4,'MASTER',null       ,'9744-12XX-XXXX-5432','XXX');
+insert into cartao values (4,'VISA'  ,null       ,'9461-02XX-XXXX-9923','XXX');
+insert into cartao values (5,'VISA'  ,null       ,'9476-33XX-XXXX-0836','XXX');
+insert into cartao values (6,'VISA'  ,sysdate-123,'9981-88XX-XXXX-8263','XXX');
+
+commit;
+
+create table agencia_produto ( idagencia char(4), produto varchar2(40));
+insert into agencia_produto values ('0001','CARTAO MASTER');
+insert into agencia_produto values ('0001','CARTAO VISA');
+insert into agencia_produto values ('0001','CHEQUE ESPECIAL');
+insert into agencia_produto values ('0001','CREDITO PESSOAL');
+insert into agencia_produto values ('0001','FINANCIAMENTO IMOBILIARIO');
+insert into agencia_produto values ('0001','PIX');
+insert into agencia_produto values ('0001','SEGURO RESIDENCIAL');
+insert into agencia_produto values ('0001','INVESTIMENTO');
+
+commit;
+create table agencia_produto_new ( idagencia char(4), produto varchar2(40));
+
+create table agencia ( idagencia char(4), nomeagencia varchar(50), idgerente int);
+create table funcionario ( idfuncionario int primary key, nome varchar(50), idcargo int);
+create table cargo ( idcargo int, cargo varchar(40));
+
+insert into agencia values ( '0001', 'AGENCIA MATRIZ', 2);
+insert into agencia values ( '0002', 'AGENCIA PRAIA', 5);
+
+insert into cargo values (1,'gerente de agencia');
+insert into cargo values (2,'caixa');
+insert into cargo values (3,'gerente PF');
+insert into cargo values (4,'gerente PJ');
+
+insert into funcionario values (1,'REINALDO BATISTA',2);
+insert into funcionario values (2,'ARIANE OLIVEIRA',1);
+insert into funcionario values (3,'PABLO MARTINS',3);
+insert into funcionario values (4,'RAFAELA NAZARIO',4);
+insert into funcionario values (5,'LUIZ FELIPE OTT',1);
+
+create table transacao ( conta char(4), agencia char(4), operacao char(1), valor number(20,2), data date);
+
+insert into transacao values ( '1111', '0001', 'C', 5000, to_date('04/01/2022 02:45','dd/mm/yyyy hh24:mi:ss') );
+insert into transacao values ( '3333', '0001', 'C', 6000, to_date('04/01/2022 11:40','dd/mm/yyyy hh24:mi:ss') );
+insert into transacao values ( '3333', '0001', 'D', 3000, to_date('05/01/2022 23:07','dd/mm/yyyy hh24:mi:ss') );
+insert into transacao values ( '1111', '0001', 'C', 2000, to_date('06/01/2022 23:40','dd/mm/yyyy hh24:mi:ss') );
+insert into transacao values ( '1111', '0001', 'D', 4000, to_date('07/01/2022 11:23','dd/mm/yyyy hh24:mi:ss') );
+insert into transacao values ( '4444', '0001', 'C', 1500, to_date('07/01/2022 11:23','dd/mm/yyyy hh24:mi:ss') );
+insert into transacao values ( '4444', '0001', 'C', 1500, to_date('07/01/2022 11:23','dd/mm/yyyy hh24:mi:ss') );
+insert into transacao values ( '1111', '0001', 'D', 2000, to_date('08/01/2022 23:40','dd/mm/yyyy hh24:mi:ss') );
+insert into transacao values ( '4444', '0001', 'C', 1000, to_date('08/01/2022 23:40','dd/mm/yyyy hh24:mi:ss') );
+insert into transacao values ( '2222', '0001', 'C', 2000, to_date('01/01/2022 13:10','dd/mm/yyyy hh24:mi:ss') );
+insert into transacao values ( '2222', '0001', 'D', 2000, to_date('08/01/2022 17:18','dd/mm/yyyy hh24:mi:ss') );
+insert into transacao values ( '1111', '0001', 'C',  100, to_date('10/01/2022 20:40','dd/mm/yyyy hh24:mi:ss') );
+insert into transacao values ( '4444', '0001', 'D',  100, to_date('10/01/2022 20:41','dd/mm/yyyy hh24:mi:ss') );
+
+COMMIT;
+
+create user auditor identified by Aud1tor#good;
+grant connect, resource, unlimited tablespace to auditor;
+create table auditor.relatorioauditoria ( idfuncionario int, data date, descricao varchar(100) );
+insert into auditor.relatorioauditoria values (2,sysdate - 10,'Aprovou financiamento imobiliario da CC 1111');
+insert into auditor.relatorioauditoria values (2,sysdate - 4, 'Aprovou empréstimo consignado da CC 3333');
+insert into auditor.relatorioauditoria values (5,sysdate - 25,'Rejeitou pedido de aumento de limite do cartao visa da CC 2222');
+commit;
+
+create table auditor.cliente ( cod int, nome varchar(20), bloqueiojudicial char(1));
+insert into auditor.cliente  values (999, 'MELAINE SOUZA','N');
+insert into auditor.cliente  values (825, 'EDUARDO ZANINI','S');
+
+create table auditor.log ( cod int, dataregistro date);
+
+commit;
+
+
+CREATE SEQUENCE seq_transacao2010  START WITH 1
+ INCREMENT BY 1 cache 10000;
+
+create table transacoes2010 ( id int, log varchar(10));
+
+declare
+   qtd int;
+begin
+   qtd := 1;   
+   WHILE qtd <= 10000
+   LOOP
+       insert into transacoes2010 values (seq_transacao2010.nextval, 'LOG ' || seq_transacao2010.nextval);
+       qtd := qtd + 1;
+   END LOOP;
+end;
+/
+commit;
+
+create user usercarga identified by U$ercarga2022;
+grant dba to usercarga;
+grant insert on sys.agencia_produto_new to usercarga;
+
+
+
