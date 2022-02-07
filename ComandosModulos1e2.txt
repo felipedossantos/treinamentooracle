@@ -1,0 +1,416 @@
+Slide04 - 
+
+Instalação do Oracle XE:
+
+https://www.oracle.com/br/database/technologies/xe-downloads.html
+
+Arquivos Auxiliares:
+
+https://github.com/felipedossantos/treinamentooracle
+
+Setup inicial:
+
+sqlplus / as sysdba
+show pdbs
+alter session set container=XEPDB1;
+@criaambiente.sql
+
+##################################################################
+Slide11 -
+
+create table cliente (idcliente number, 
+                      nome      varchar(50));
+
+insert into cliente values (1, 'Ana da Silva');
+insert into cliente values (2, 'Marcos Ribeiro');
+insert into cliente values (3, 'Bruna da Silva');
+insert into cliente values (4, 'Pedro Henrique Silva dos Santos’);
+
+commit;
+
+col nome format a40
+select * from cliente;
+
+##################################################################
+
+Slide15 -
+
+create table TSTVALOR ( vlr1 integer, 
+                        vlr2 int, 
+                        vlr3 numeric, 
+                        vlr4 number, 
+                        vlr5 number(4,2) );
+
+insert into TSTVALOR values ( 12.345, 12.345, 12.345, 12.345, 12.345);
+
+DESC TSTVALOR
+
+select * from TSTVALOR ;
+
+##################################################################
+
+Slide16 -
+
+insert into TSTVALOR values ( 12.345, 12.345, 12.345, 12.345, 99.994);
+
+1 linha criada.
+
+insert into TSTVALOR values ( 12.345, 12.345, 12.345, 12.345, 99.995);
+
+##################################################################
+
+Slide17 -
+
+create table tstpontoflutuante ( Preco float);
+
+insert into tstpontoflutuante values (123.12345);
+insert into tstpontoflutuante values (1234567.12);
+insert into tstpontoflutuante values (1.1234567890123456789);
+
+col preco format 99.9999999999999999999999
+select * from tstpontoflutuante;
+
+
+##################################################################
+
+Slide18 -
+
+TRUNCATE TABLE Cliente; 
+DROP TABLE Cliente;               
+ALTER TABLE tstpontoflutuante ADD    desconto number(4,2);
+ALTER TABLE tstpontoflutuante MODIFY desconto number(6,4);
+
+
+Slide19 - 
+
+create table cliente (idcliente number, 
+                      nome      varchar(50),
+                      estado    char(2),
+                      cpf       varchar(14),
+                      cidade    varchar(50));                            
+
+insert into cliente values (1, 'Ana da Silva', 'SP','123.456.789-01','Sao Paulo');
+insert into cliente values (2, 'Marcos Ribeiro','RJ','123.456.789-02','Rio de Janeiro');
+insert into cliente values (3, 'Bruna da Silva','SP','123.456.789-03', 'Sao Paulo');
+insert into cliente values (4, 'Pedro Henrique Silva dos Santos','SP','123.456.789-04','Sao Paulo');
+insert into cliente values (5, 'Catarina Ribeiro','RJ','123.456.789-05','Rio de Janeiro');
+insert into cliente values (6, ‘Mario de Andrade','SC','123.456.789-06','Pomerode’);
+
+commit;
+
+set linesize 200
+
+select * from cliente;
+
+##################################################################
+
+Slide20 -
+
+SELECT * FROM cliente;
+
+SELECT nome, idcliente FROM cliente;
+
+SELECT 'Cliente: ' || idcliente || ' -> ' || nome FROM cliente;
+
+SELECT idcliente as codigo, nome nomecliente, idcliente cod FROM cliente;
+
+SELECT nome “Nome do Cliente” FROM cliente WHERE rownum <=3;
+
+SELECT DISTINCT estado FROM cliente;
+
+SELECT C.estado FROM cliente C;
+
+
+##################################################################
+
+Slide21 - 
+
+SQL> desc dual
+
+SQL> select * from dual;
+
+SQL> select (10 + 5) / 2 from dual;
+
+SQL> select sysdate from dual;
+
+SQL> select length('TamanhoDesseTexto’)
+from dual;
+
+
+##################################################################
+
+Slide22 -
+
+SELECT COUNT(*),  COUNT(1) FROM conta; 
+
+SELECT SUM(saldo)  FROM conta;
+
+SELECT MIN(saldo)  FROM conta;
+
+SELECT MAX(saldo)  FROM conta;
+
+SELECT AVG(saldo)  FROM conta;
+
+SELECT COUNT(conta),  COUNT(idconjuge) FROM conta;
+
+##################################################################
+
+Slide25 - 
+
+SELECT * FROM cliente WHERE idcliente > 3;
+SELECT * FROM cliente WHERE idcliente <> 3;
+SELECT * FROM cliente WHERE estado    IN ('SP','RJ');
+SELECT * FROM cliente WHERE nome      LIKE '%Ribeiro';
+SELECT * FROM cliente WHERE nome      LIKE '%Silva%';
+SELECT * FROM cliente WHERE nome      LIKE 'Bruna%';
+SELECT * FROM conta   WHERE idconjuge IS NULL;
+SELECT * FROM conta   WHERE idconjuge IS NOT NULL;
+SELECT * FROM conta   WHERE saldo     BETWEEN 2000 AND 3000;
+
+
+##################################################################
+
+Slide26 - 
+
+SELECT * FROM cliente WHERE estado NOT IN ('SP') AND nome      LIKE 'Catarina%';
+SELECT * FROM conta   WHERE saldo  >= 2000       AND idconjuge IS NOT NULL;
+SELECT * FROM cliente WHERE estado = 'RS'        OR  estado    = 'RJ';
+
+SELECT * FROM cliente WHERE nome   LIKE '%Ribeiro%’ 
+                        AND estado = 'RS’ 
+                         OR estado = 'SP’;
+
+SELECT * FROM cliente WHERE (nome LIKE '%Ribeiro%' AND estado = 'RS’ ) OR estado = 'SP’;
+
+SELECT * FROM cliente WHERE nome LIKE '%Ribeiro%' AND (estado = 'RS' OR estado = 'SP’);
+
+
+##################################################################
+
+Slide27 - 
+
+SELECT * FROM cliente ORDER BY nome;
+SELECT * FROM cliente ORDER BY nome ASC;
+SELECT * FROM conta ORDER BY saldo DESC;
+SELECT Nome, IdCliente ID FROM cliente ORDER BY ID DESC;
+SELECT Nome, idCliente FROM cliente ORDER BY 2;
+
+##################################################################
+
+Slide31 - 
+
+SQL> desc cliente
+
+INSERT INTO cliente VALUES (7,'Valmir Correa', 'MG', '123.456.789-07','Contagem’);
+
+INSERT INTO cliente(Nome, idCliente, CPF) 
+VALUES ('Isaura Mascarenhas',8,'123.456.789-08');
+
+##################################################################
+
+Slide32 - 
+
+SQL> select * from agencia_produto;
+
+INSERT INTO agencia_produto
+(idagencia, produto)
+SELECT '0002', produto 
+FROM agencia_produto;
+
+INSERT INTO cliente
+SELECT 9, 'Viviane Camargo’, 'RJ', '123.456.789-09' , 'Niteroi' 
+FROM dual;
+
+##################################################################
+
+Slide33 - 
+
+DELETE FROM cliente WHERE cpf = '123.456.789-08';
+
+	DELETE cliente WHERE cidade = 'Pomerode’ AND estado = 'SC';
+
+	DELETE cliente WHERE exists ( 
+       select 1 from conta where encerrada = 'SIM'
+           and conta.idcliente = cliente.idCliente );
+
+Rollback;
+
+##################################################################
+
+Slide34 -
+
+update cliente
+          set Nome = 'Catharina Ribeiro'
+          where cpf = '123.456.789-05’;
+
+Commit;
+
+update conta
+          set saldo = 0,
+              encerrada = 'SIM’
+          where idcliente = 1;
+
+Rollback;          
+
+##################################################################
+
+Slide37 -
+
+Update conta
+set saldo = saldo + 250
+       where conta = '1111'
+         and agencia = '0001'
+
+Update conta
+set saldo = saldo - 250
+       where conta = '4444'
+         and agencia = '0001’;
+
+
+Commit;
+
+Rollback;
+
+##################################################################
+
+Slide38 -
+
+Update conta
+ set saldo = saldo + 250
+ where conta = '1111'
+   and agencia = '0001’;
+
+
+Update conta
+ set saldo = saldo - 100
+ where conta = '4444'
+   and agencia = '0001’;
+
+Update conta
+ set saldo = saldo - 250
+ where conta = '4444'
+   and agencia = '0001';
+
+Update conta
+ set saldo = saldo + 100
+ where conta = '1111'
+   and agencia = '0001’;
+
+
+
+##################################################################
+
+Slide39 -
+
+
+SQL> SELECT bandeira, count(*)
+         FROM cartao where datacancelamento is null 
+         GROUP BY bandeira;
+
+##################################################################
+
+Slide40 -
+
+
+SQL> SELECT estado, cidade, count(*) as qtd
+         FROM cliente 
+         GROUP BY estado, cidade order by 1,2;
+
+##################################################################
+
+Slide41 -
+
+
+SQL> SELECT estado, cidade, count(*) as qtd
+         FROM cliente 
+         GROUP BY estado, cidade
+         HAVING COUNT(*) >= 2;
+
+##################################################################
+
+Slide42 -
+
+
+SQL> select TO_CHAR(123.05) || ' é um texto agora’ saida from dual;
+
+select TO_DATE('17/11/2021','dd/mm/yyyy')    todate,
+       TO_CHAR(sysdate,'dd/mm/yyyy hh24:mi') tochar  from dual;
+
+
+##################################################################
+
+Slide43 -
+
+
+select TO_NUMBER('1234,567') + 66 tonumber
+      from dual;
+
+
+##################################################################
+
+Slide44 -
+
+select CASE estado
+        WHEN 'SC' THEN 'Santa Catarina'
+        WHEN 'RJ' THEN 'Rio de Janeiro'
+        ELSE 'Outro estado'
+       END as "Nome do Estado"
+   from cliente;
+
+select CASE
+        WHEN (estado = 'SC') THEN 'Catarinense'
+        WHEN (estado = 'RJ' and cidade <> 'Rio de Janeiro') THEN 'Fluminense'
+        WHEN (estado = 'RJ' and cidade =  'Rio de Janeiro') THEN 'Carioca'
+        ELSE 'Outro'
+       END as "gentilico"
+   from cliente;
+
+##################################################################
+
+Slide45 -
+
+select DECODE (estado,'SC','Santa Catarina’,'RJ','Rio de Janeiro', 'Outro estado’)
+   from cliente;
+
+##################################################################
+
+Slide46 -
+
+SELECT  TRIM('  teste  ') tudo,             
+       RTRIM('  teste  ') direita, 
+       LTRIM('  teste  ') esquerda,
+       TRIM('#' from '#### teste') O 
+   FROM dual;
+
+
+
+SELECT ROUND(3.45, 1) A,
+       ROUND(3.41, 1) B,
+       TRUNC(3.45, 1) C,
+       TRUNC(3.45)    D,
+       NVL(null,0)    E FROM dual; 
+
+##################################################################
+
+Slide47 -
+
+SELECT INITCAP ('mEu teSTe') initcap,
+       LOWER('TESTE') lower,
+       UPPER('teste') upper,
+       LPAD('12,99', 10, '#') lpad
+   FROM dual; 
+
+
+SELECT SUBSTR('Meu Teste', 5, 5) substr,
+       INSTR('Meu Teste','Teste') instr,
+       REPLACE( '20.99', '.' , ',' ) repl,
+       CHR(65) chr,
+       ASCII('A') ascii  FROM dual;
+
+
+
+
+
+
+
+
