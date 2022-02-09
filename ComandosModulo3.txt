@@ -1,0 +1,74 @@
+Slide 51
+
+select agencia, conta, saldo from conta 
+   where saldo = ( select max(saldo) from conta);
+
+Slide 52
+
+select agencia, conta, 
+(saldo / ( select sum(saldo) from conta) ) * 100 as “%SALDO”
+   from conta;
+
+Slide 53
+
+SELECT agencia, conta, saldo FROM conta 
+ where saldo = ( select max(saldo) from conta)
+UNION ALL
+SELECT agencia, conta, saldo FROM conta 
+ where saldo = ( select min(saldo) from conta)
+ORDER BY saldo;
+
+Slide 54
+
+SELECT nome 
+    FROM cliente INNER JOIN cartao 
+      ON cliente.idcliente = cartao.idcliente 
+     AND bandeira          = 'VISA’ 
+     AND datacancelamento  is null;
+
+Slide 55
+
+SELECT nome 
+    FROM cliente, cartao 
+    WHERE cliente.idcliente = cartao.idcliente 
+     AND bandeira           = 'VISA’ 
+     AND datacancelamento   is null;
+
+Slide 56
+
+SELECT nome, bandeira 
+    FROM cliente LEFT JOIN cartao 
+      ON cliente.idcliente = cartao.idcliente 
+    ORDER BY 1;
+
+Slide 57
+
+SELECT nome, bandeira 
+    FROM cliente, cartao 
+    WHERE cliente.idcliente = cartao.idcliente(+) 
+    ORDER BY 1;
+
+Slide 58
+
+SELECT c.conta, cl1.nome, cl2.nome conjuge
+    FROM conta c INNER JOIN cliente cl1
+      ON c.idcliente = cl1.idcliente 
+                 LEFT JOIN cliente cl2
+      ON c.idconjuge = cl2.idcliente;
+
+Slide 59
+
+SELECT nome, bandeira
+    FROM cliente LEFT JOIN cartao 
+      ON cliente.idcliente = cartao.idcliente 
+    WHERE cartao.bandeira is null;
+
+Slide 60
+
+SELECT nome
+    FROM cliente 
+    WHERE exists ( 
+       select 1 from cartao 
+        where cartao.idcliente = cliente.idcliente );
+
+
